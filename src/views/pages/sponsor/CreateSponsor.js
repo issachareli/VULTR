@@ -402,7 +402,6 @@ const CreateSponsor = function() {
             formData.append('handphone_number', phoneNo);
         formData.append('role', sponsorType);
         formData.append('available_credit', credits);
-        formData.append('created_by_id', createdby);
         if (file !== "")
             formData.append('picture', file, file.name);
 
@@ -422,7 +421,6 @@ const CreateSponsor = function() {
                     let newErrors = { ...errors };
                     if ("email" in res.data.errors) newErrors.email = res.data.errors.email[0];
                     if ("available_credit" in res.data.errors) newErrors.credits = res.data.errors.available_credit[0];
-                    if ("created_by_id" in res.data.errors) newErrors.createdby = res.data.errors.created_by_id[0];
                     if ("name" in res.data.errors) newErrors.name = res.data.errors.name[0];
                     if ("group" in res.data.errors) newErrors.group = res.data.errors.group[0];
                     if ("handphone_number" in res.data.errors) newErrors.phoneNo = res.data.errors.handphone_number[0];
