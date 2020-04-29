@@ -1,0 +1,51 @@
+{
+  "name": "vibe-react",
+  "version": "1.0.2",
+  "description": "Vibe Dashboard React Theme",
+  "author": "Nice Dash",
+  "copyright": "Copyright 2019 Nice Dash",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bootstrap": "^4.3.1",
+    "chart.js": "^2.7.3",
+    "classnames": "^2.2.6",
+    "clipboard-polyfill": "^2.8.1",
+    "font-awesome": "^4.7.0",
+    "js-file-download": "^0.4.7",
+    "moment": "^2.24.0",
+    "node-gyp": "^4.0.0",
+    "node-sass": "^4.12.0",
+    "number-abbreviate": "^2.0.0",
+    "qrcode": "^1.4.2",
+    "react": "^16.8.1",
+    "react-bootstrap": "^1.0.0-beta.9",
+    "react-chartjs-2": "2.6.4",
+    "react-copy-to-clipboard": "^5.0.1",
+    "react-dom": "^16.8.1",
+    "react-feather": "^1.1.6",
+    "react-fontawesome": "1.6.1",
+    "react-js-pagination": "^3.0.2",
+    "react-modal": "^3.8.2",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.3",
+    "reactstrap": "6.4.0",
+    "@reach/dialog": "0.1.2",
+    "react-modal-video": "1.2.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

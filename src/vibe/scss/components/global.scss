@@ -1,0 +1,21 @@
+/* GLOBAL STYLES
+   ----------------------------- */
+
+body {
+	background-color: #f7f7f7;
+	font-family: $globalFontFamily;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+hr {
+	border-color: $hrColor;
+}
+
+
+
+.modal-video-movie-wrap { 
+	background-color: #3330 !important;
+
+	}

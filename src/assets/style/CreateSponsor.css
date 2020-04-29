@@ -1,0 +1,38 @@
+.form-wrapper {
+    height: auto;
+    overflow: hidden;
+    max-height: 1000px;
+    transition-duration: 0.2s;
+    transition-delay: 0ms;
+    transition-timing-function: ease-in;
+}
+
+.hide-form {
+    max-height: 0px;
+}
+
+.input-file {
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.input-file + .input-file-label {
+    padding: 8px 10px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    transition-duration: 0.1s;
+    display: inline-block;
+    cursor: pointer;
+    width: 180px;
+    text-align: center;
+}
+
+.input-file:focus + .input-file-label,
+.input-file + .input-file-label:hover {
+    background-color: #0e61a9;
+}

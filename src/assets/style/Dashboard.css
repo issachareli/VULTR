@@ -1,0 +1,13 @@
+@media (max-width: 500px) {
+  div, .responsive, .dropdown-item {
+    font-size: 12px;
+  }
+
+  .responsive-header {
+    font-size: 20px;
+  }
+
+  .responsive-table td, th {
+    padding: 5px;                                                                                                                         
+  }
+}
