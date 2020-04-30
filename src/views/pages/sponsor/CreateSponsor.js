@@ -235,7 +235,7 @@ const CreateSponsor = function() {
     const [group, setGroup] = useState("");
     const [email, setEmail] = useState("");
     const [phoneNo, setPhoneNo] = useState("");
-    const [createdBy, setcreatedBy] = useState("");
+    const [createdBy, setCreatedBy] = useState("");
     const [sponsorType, setSponsorType] = useState("3");
     const [credits, setCredits] = useState("");
     const [file, setFile] = useState('');
@@ -347,7 +347,7 @@ const CreateSponsor = function() {
             case "phoneNo":
                 setPhoneNo(e.target.value);
                 break;
-                case "createdBy":
+            case "createdBy":
                 setCreatedBy(e.target.value);
                 break;
             case "sponsorType":
