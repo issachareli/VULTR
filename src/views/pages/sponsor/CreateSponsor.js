@@ -170,6 +170,10 @@ const SponsorList = function(props) {
                     return (
                         <Table key={sponsor.email}>
                             <tbody>
+                                 <tr>
+                                    <td><span className="responsive">Sponsor</span></td>
+                                    <td><span className="responsive">{sponsor.created_by_id}</span></td>
+                                </tr>
                                 <tr>
                                     <td><span className="responsive">Name</span></td>
                                     <td><span className="responsive">{sponsor.name}</span></td>
@@ -185,10 +189,6 @@ const SponsorList = function(props) {
                                 <tr>
                                     <td><span className="responsive">Credits</span></td>
                                     <td><span className="responsive">{sponsor.avalable_credit}</span></td>
-                                </tr>
-                                 <tr>
-                                    <td><span className="responsive">Sponsor</span></td>
-                                    <td><span className="responsive">{sponsor.created_by_id}</span></td>
                                 </tr>
                                 <tr>
                                     <td><span className="responsive">Sponsor Type</span></td>
