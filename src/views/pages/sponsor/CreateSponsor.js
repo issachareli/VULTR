@@ -119,6 +119,7 @@ const SponsorList = function(props) {
             <Table>
                 <thead>
                     <tr>
+                        <th><span className="responsive">Sponsor</span></th>
                         <th><span className="responsive">Name</span></th>
                         <th><span className="responsive">Email</span></th>
                         <th><span className="responsive">Phone Number</span></th>
@@ -131,12 +132,12 @@ const SponsorList = function(props) {
                     {props.sponsorList.map(sponsor => {
                         return (
                             <tr key={sponsor.email}>
+                                <td><span className="responsive">{sponsor.created_by_id}</span></td>
                                 <td><span className="responsive">{sponsor.name}</span></td>
                                 <td><span className="responsive">{sponsor.email}</span></td>
                                 <td><span className="responsive">{sponsor.handphone_number}</span></td>
                                 <td><span className="responsive">{sponsor.available_credit}</span></td>
                                 <td><span className="responsive">{sponsor.role}</span></td>
-                                <td><span className="responsive">{sponsor.created_by_id}</span></td>
                                 <td>
                                     <Row>
                                         <Col xs={6}>
