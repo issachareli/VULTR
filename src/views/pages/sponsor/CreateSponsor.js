@@ -235,6 +235,7 @@ const CreateSponsor = function() {
     const [group, setGroup] = useState("");
     const [email, setEmail] = useState("");
     const [phoneNo, setPhoneNo] = useState("");
+    const [createdBy, setcreatedBy] = useState("");
     const [sponsorType, setSponsorType] = useState("3");
     const [credits, setCredits] = useState("");
     const [file, setFile] = useState('');
@@ -244,6 +245,7 @@ const CreateSponsor = function() {
         group: "",
         email: "",
         phoneNo: "",
+        createdBy: "",
         credits: "",
         file: "",
     });
@@ -299,6 +301,13 @@ const CreateSponsor = function() {
                     newErrors.phoneNo = "";
                 }
                 break;
+                case "createdBy":
+                if (value === "") {
+                    newErrors.createdBy = "Sponsor ID can not be empty!";
+                } else {
+                    newErrors.createdBy = "";
+                }
+                break;
             case "sponsorType":
                 break;
             case "credits":
@@ -338,6 +347,9 @@ const CreateSponsor = function() {
             case "phoneNo":
                 setPhoneNo(e.target.value);
                 break;
+                case "createdBy":
+                setcreatedBy(e.target.value);
+                break;
             case "sponsorType":
                 setSponsorType(e.target.value);
                 break;
@@ -372,6 +384,7 @@ const CreateSponsor = function() {
         setEmail("");
         setCredits("");
         setPhoneNo("");
+        setCreatedBy("");
         setSponsorType("3");
         setFile("");
         setImagePreviewUrl("");
@@ -396,6 +409,7 @@ const CreateSponsor = function() {
         
         // make axios request to create 
         let formData = new FormData();
+        formData.append('created_by', createdBy);
         formData.append('email', email);
         formData.append('name', name);
         formData.append('group', group);
@@ -422,6 +436,7 @@ const CreateSponsor = function() {
                     let newErrors = { ...errors };
                     if ("email" in res.data.errors) newErrors.email = res.data.errors.email[0];
                     if ("available_credit" in res.data.errors) newErrors.credits = res.data.errors.available_credit[0];
+                    if ("created_by" in res.data.errors) newErrors.createdBy = res.data.errors.created_by[0];
                     if ("name" in res.data.errors) newErrors.name = res.data.errors.name[0];
                     if ("group" in res.data.errors) newErrors.group = res.data.errors.group[0];
                     if ("handphone_number" in res.data.errors) newErrors.phoneNo = res.data.errors.handphone_number[0];
@@ -562,6 +577,15 @@ const CreateSponsor = function() {
                                                 <Col xs={12}>
                                                     <Input  bsSize="sm" value={group} name="group" onChange={handleFormChange} />
                                                     <span style={{fontSize: '80%', color: "red"}} className="responsive">{errors.group || " "}</span>
+                                                </Col>
+                                            </FormGroup>
+                                            <FormGroup row style={{ alignItems: "center"}}>
+                                                <Label xs={12}>
+                                                    <span className="responsive">Sponsor ID</span>
+                                                </Label>
+                                                <Col xs={12}>
+                                                    <Input  bsSize="sm" value={createdBy} name="createdBy" onChange={handleFormChange} />
+                                                    <span style={{fontSize: '80%', color: "red"}} className="responsive">{errors.createdBy || " "}</span>
                                                 </Col>
                                             </FormGroup>
                                             <Row>
