@@ -348,7 +348,7 @@ const CreateSponsor = function() {
                 setPhoneNo(e.target.value);
                 break;
                 case "createdBy":
-                setcreatedBy(e.target.value);
+                setCreatedBy(e.target.value);
                 break;
             case "sponsorType":
                 setSponsorType(e.target.value);
