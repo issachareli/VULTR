@@ -10,7 +10,7 @@ import Learning from './pages/sponsor/Learning';
 import UserDashboard from './pages/user/UserDashboard';
 import TestResults from './pages/user/TestResults';
 import UserProfile from './pages/user/Profile';
-import Latest from './pages/user/Home';
+import Latest from './pages/sponsor/Home';
 import ManagementDashboard from './pages/sponsor/ManagementDashboard';
 
 const pageList = {
