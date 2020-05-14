@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ArticlePreview from '../../../layouts/ArticlePreview
+import ArticlePreview from '../../../layouts/ArticlePreview';
 
 export default class Home extends Component {
   constructor(props) {
