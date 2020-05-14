@@ -10,6 +10,7 @@ import Learning from './pages/sponsor/Learning';
 import UserDashboard from './pages/user/UserDashboard';
 import TestResults from './pages/user/TestResults';
 import UserProfile from './pages/user/Profile';
+import Latest from './pages/user/Home';
 import ManagementDashboard from './pages/sponsor/ManagementDashboard';
 
 const pageList = {
@@ -72,6 +73,13 @@ const pageList = {
       name: 'Learning',
       path: '/sponsor/elearning',
       component: Learning,
+      exact: true,
+      allowed:['SYSTEM', 'MANAGEMENT', 'ADMINISTRATIVE','NORMAL', 'DEMO']
+    },
+             {
+      name: 'Latest',
+      path: '/sponsor/home',
+      component: Latest,
       exact: true,
       allowed:['SYSTEM', 'MANAGEMENT', 'ADMINISTRATIVE','NORMAL', 'DEMO']
     },
