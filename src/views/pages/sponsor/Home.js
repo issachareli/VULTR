@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import WPAPI from '../wpClient';
-import FrontpageItem from '../FrontpageItem';
+import WPAPI from '../../../layouts/wpClient';
+import FrontpageItem from '../../../layouts/FrontpageItem';
 
 class Home extends Component {
 
