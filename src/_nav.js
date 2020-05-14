@@ -26,6 +26,12 @@ export default {sponsor:{
       external: true,
       target: '_blank'
     },
+        {
+      name: 'Latest',
+      url: '/sponsor/home',
+      icon: 'Book',
+      allowed:['SYSTEM', 'MANAGEMENT', 'ADMINISTRATIVE','NORMAL', 'DEMO'],
+    },
     {
       name: 'Video Resources',
       url: '/sponsor/video-resources',
