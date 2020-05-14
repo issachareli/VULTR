@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ArticlePreview from '../../../layouts/ArticlePreview';
+import axios from 'axios';
 
 export default class Home extends Component {
   constructor(props) {
