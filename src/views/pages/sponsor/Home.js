@@ -1,5 +1,6 @@
 const WPAPI = {    
-     allPosts: 'https://home.mymoneylife.co/wp-json/wp/v2/pages/132',
+     allPosts: 'http://juha.blog/wp-json/wp/v2/posts',
+     books: 'http://juha.blog/wp-json/wp/v2/posts?categories=23&per_page=4',
        
 }
 export default WPAPI
