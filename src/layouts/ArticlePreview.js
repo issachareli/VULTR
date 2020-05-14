@@ -1,8 +1,11 @@
-render() {
+import React from 'react'
+
+class ArticlePreview extends React.Component {
+  render () {
     if (this.props.post) {
       return (
         <div className="article">
-          <a href={"/blog/" + this.props.post.ID} className="blackLink">
+          <a href={'/blog/' + this.props.post.ID} className="blackLink">
             {this.props.post.featured_image ? (
               <img
                 className="img-responsive webpic"
@@ -10,17 +13,20 @@ render() {
                 src={this.props.post.featured_image}
               />
             ) : (
-              ""
+              ''
             )}
             <h1 className="text-center">{this.props.post.title}</h1>
             <div className="content">{excerpt}</div>
           </a>
-          <Link to={"/blog/" + this.props.post.ID}>
+          <Link to={'/blog/' + this.props.post.ID}>
             <button className="btn">Read More</button>
           </Link>
         </div>
-      );
+      )
     } else {
-      return null;
+      return null
     }
   }
+}
+
+export default ArticlePreview
