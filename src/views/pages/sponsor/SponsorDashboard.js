@@ -360,8 +360,7 @@ export default class SponsorDashboard extends Component {
                             />
                           </Col>
                           <Col xl={9} xs={12}>
-                            <Input 
-                              type="text"
+                            <Input
                               value={this.state.campaign}
                               onChange={e => this.setState({ campaign : parseInt(e.target.value)})}
                               placeholder="Campaign Name"
