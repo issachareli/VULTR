@@ -43,7 +43,7 @@ export default class SponsorDashboard extends Component {
       canvas: null,
       weChatAlert: false,
       linkLanguage: "en",
-      name: '',
+      campaign: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.notify = this.notify.bind(this);
@@ -87,7 +87,7 @@ export default class SponsorDashboard extends Component {
     axios.post(`${config.url}/api/v1/sponsor/tests/generate-link`, 
       { credits: this.state.credits, 
        language: this.state.linkLanguage,
-       name: this.state.name },
+       campaign: this.state.campaign },
       { headers: { Authorization: `Bearer ${accessToken}` } }
     ).then(res => {
       clipboard.writeText(`${config.url}/credit/${res.data.uuid}/test`)
@@ -362,8 +362,8 @@ export default class SponsorDashboard extends Component {
                           <Col xl={9} xs={12}>
                             <Input 
                               type="text"
-                              value={this.state.name}
-                              onChange={e => this.setState({ name : parseInt(e.target.value)})}
+                              value={this.state.campaign}
+                              onChange={e => this.setState({ campaign : parseInt(e.target.value)})}
                               placeholder="Campaign Name"
                             />
                           </Col>
