@@ -361,13 +361,15 @@ export default class SponsorDashboard extends Component {
                           </Col>
                           <Col xl={9} xs={12}>
                             <Input
+                              type="text"
                               value={this.state.campaign}
-                              onChange={e => this.setState({ campaign : parseInt(e.target.value)})}
+                              onChange={e => this.setState({campaign : e.target.value})}
                               placeholder="Campaign Name"
                             />
                           </Col>
                           <Col xl={3} xs={12}>
-                            <Form.Control as="select" value={this.state.linkLanguage} onChange={e => this.setState({linkLanguage: e.target.value})} >
+                            <Form.Control as="select" value={this.state.linkLanguage} 
+                               onChange={e => this.setState({linkLanguage: e.target.value})} >
                               <option value="en">English</option>
                               
                             </Form.Control>
