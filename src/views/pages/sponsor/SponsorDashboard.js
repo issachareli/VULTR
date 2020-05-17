@@ -351,15 +351,7 @@ export default class SponsorDashboard extends Component {
                   </CardHeader>
                   <CardBody>
                       <Row>
-                          <Col xl={9} xs={12}>
-                            <Input 
-                              type="number"
-                              value={this.state.credits}
-                              onChange={e => this.setState({ credits : parseInt(e.target.value)})}
-                              placeholder="Number of Credits"
-                            />
-                          </Col>
-                          <Col xl={9} xs={12}>
+                           <Col xl={9} xs={12} pb={3}>
                             <Input
                               type="text"
                               value={this.state.campaign}
@@ -367,6 +359,15 @@ export default class SponsorDashboard extends Component {
                               placeholder="Campaign Name"
                             />
                           </Col>
+                          <Col xl={9} xs={12} pb={3}>
+                            <Input 
+                              type="number"
+                              value={this.state.credits}
+                              onChange={e => this.setState({ credits : parseInt(e.target.value)})}
+                              placeholder="Number of Credits"
+                            />
+                          </Col>
+
                           <Col xl={3} xs={12}>
                             <Form.Control as="select" value={this.state.linkLanguage} 
                                onChange={e => this.setState({linkLanguage: e.target.value})} >
