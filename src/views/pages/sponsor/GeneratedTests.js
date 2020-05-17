@@ -160,6 +160,9 @@ class GeneratedTest extends Component {
         return this.state.generatedTests.map((record, index) => {
           return (
             <tr key={index}>
+             <td style={{ width: '20%' }}>
+                <span className="responsive">{record.campaign}</span>
+              </td>
               <td style={{ width: '30%' }}>
                 <span className="responsive">{`${config.url}/credit/${record.uuid}/test`}</span>
                {/* <CopyToClipboard text={`${config.url}/credit/${record.uuid}/test`}>
@@ -167,12 +170,6 @@ class GeneratedTest extends Component {
                 </CopyToClipboard>
                 <i onClick={() => this.sendWhatsappMessage(`${config.url}/credit/${record.uuid}/test`)} style={{ color: 'green' }} className="fa fa-whatsapp my-float mr-3 pull-right"/> */}
               </td>
-            
-             <td style={{ width: '20%' }}>
-                <span className="responsive">{record.name}</span>
-              </td>
-            
-            
               <td style={{width:'10%'}}>{langaugeMap[record.language]}</td>
               <td style={{ width: '15%' }}><span className={'responsive mr-3'}>{record.credits}</span>
                 <span><i style={{fontSize:'1.5em',verticalAlign:'bottom'}} className="fa mx-3 float-right fa-trash" onClick={this.handleDeleteClick.bind(this,record)}/>
@@ -203,6 +200,7 @@ class GeneratedTest extends Component {
           <Table className="responsive-table">
             <thead>
             <tr>
+              <th>Campaign</th>
               <th>Link</th>
               <th>Language</th>
               <th>Credits</th>
