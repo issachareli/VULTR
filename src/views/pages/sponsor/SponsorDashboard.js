@@ -351,7 +351,7 @@ export default class SponsorDashboard extends Component {
                   </CardHeader>
                   <CardBody>
                       <Row>
-                           <Col xl={9} xs={12} pb={3}>
+                           <Col xl={9} xs={12} pb-3>
                             <Input
                               type="text"
                               value={this.state.campaign}
@@ -359,7 +359,7 @@ export default class SponsorDashboard extends Component {
                               placeholder="Campaign Name"
                             />
                           </Col>
-                          <Col xl={9} xs={12} pb={3}>
+                          <Col xl={9} xs={12} pb-3>
                             <Input 
                               type="number"
                               value={this.state.credits}
