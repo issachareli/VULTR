@@ -352,12 +352,11 @@ export default class SponsorDashboard extends Component {
                   <CardBody>
                       <Row>
                            <Col xl={9} xs={12} pb={3}>
-                            <Input
-                              type="text"
-                              value={this.state.campaign}
-                              onChange={e => this.setState({campaign : e.target.value})}
-                              placeholder="Campaign Name"
-                            />
+                             <div className="form-group">
+                        <label htmlFor="title" className="pl-0">Campaign: </label>
+                        <input id="title" className="form-control" value={this.state.campaign} name="Campaign" onChange={(e) => this.setState({campaign : e.target.value})} />
+                      </div>
+                           
                           </Col>
                           <Col xl={9} xs={12} pb={3}>
                             <Input 
