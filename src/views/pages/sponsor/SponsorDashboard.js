@@ -353,8 +353,8 @@ export default class SponsorDashboard extends Component {
                       <Row>
                            <Col xl={9} xs={12} pb={3}>
                              <div className="form-group">
-                        <label htmlFor="title" className="pl-0">Campaign: </label>
-                        <input id="title" className="form-control" value={this.state.campaign} name="Campaign" onChange={(e) => this.setState({campaign : e.target.value})} />
+                        <label className="pl-0">Campaign Name:</label>
+                        <input className="form-control" placeholder="E.g. Referral by John Doe, Webinar on xxxxxx (date)" value={this.state.campaign} name="Campaign" onChange={(e) => this.setState({campaign : e.target.value})} />
                       </div>
                            
                           </Col>
