@@ -81,8 +81,8 @@ export default class SponsorDashboard extends Component {
     window.open(`${config.url}/api/v1/report/${id}/`)
   }
 
-  generateTestLink = () => {
-    e.preventDefault()
+  generateTestLink = (e) => {
+    e.preventDefault();
     const accessToken = localStorage.getItem('Token')
     axios.post(`${config.url}/api/v1/sponsor/tests/generate-link`,
       {
