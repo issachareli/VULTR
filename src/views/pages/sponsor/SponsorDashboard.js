@@ -401,7 +401,8 @@ export default class SponsorDashboard extends Component {
                   <CardBody>
                       <Row>
                            <Col xl={9} xs={12} pb={3}>
-                             <form className="form-group" onSubmit= {this.contactSubmit.bind(this)} >
+                            <form onSubmit= {this.contactSubmit.bind(this)} >
+                             <div className="form-group">
                         <label className="pl-0">Campaign Name:</label>
                         <input className="form-control" placeholder="E.g. Referral by John Doe, Webinar on xxxxxx (date)" maxlength="30" value={this.state.campaign} name="Campaign" onChange={(e) => this.setState({campaign : e.target.value})} />
                       </div>
@@ -427,6 +428,7 @@ export default class SponsorDashboard extends Component {
                             <Button className="mt-2" size="md" color="primary" onClick={this.generateTestLink}>
                               <span className="responsive">Generate</span>
                             </Button>
+                            </form>
                           </Col>
                       </Row>
                       <TestURL /> 
