@@ -44,11 +44,60 @@ export default class SponsorDashboard extends Component {
       weChatAlert: false,
       linkLanguage: "en",
       campaign: '',
+      fields: {},
+      errors: {}
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.notify = this.notify.bind(this);
     this.sendMessage = this.sendMessage.bind(this);
   }
+  
+  
+  
+  handleValidation(){
+        let fields = this.state.fields;
+        let errors = {};
+        let formIsValid = true;
+
+        //Name
+        if(!fields["name"]){
+           formIsValid = false;
+           errors["name"] = "Cannot be empty";
+        }
+
+       this.setState({errors: errors});
+       return formIsValid;
+   }
+  
+  
+  contactSubmit(e){
+        e.preventDefault();
+
+        if(this.handleValidation()){
+           alert("Form submitted");
+        }else{
+           alert("Form has errors.")
+        }
+
+    }
+
+    handleChange(field, e){         
+        let fields = this.state.fields;
+        fields[field] = e.target.value;        
+        this.setState({fields});
+    }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
   sendMessage = () => {
     window.open(`https://web.whatsapp.com/send?phone=&text=${this.state.url}`)
@@ -352,7 +401,7 @@ export default class SponsorDashboard extends Component {
                   <CardBody>
                       <Row>
                            <Col xl={9} xs={12} pb={3}>
-                             <div className="form-group">
+                             <form className="form-group" onSubmit= {this.contactSubmit.bind(this)} >
                         <label className="pl-0">Campaign Name:</label>
                         <input className="form-control" placeholder="E.g. Referral by John Doe, Webinar on xxxxxx (date)" maxlength="30" value={this.state.campaign} name="Campaign" onChange={(e) => this.setState({campaign : e.target.value})} />
                       </div>
