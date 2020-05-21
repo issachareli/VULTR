@@ -51,37 +51,6 @@ export default class SponsorDashboard extends Component {
     this.sendMessage = this.sendMessage.bind(this)
   }
 
-  handleValidation () {
-    const fields = this.state.fields
-    const errors = {}
-    let formIsValid = true
-
-    // Name
-    if (!fields.campaign) {
-      formIsValid = false
-      errors.campaign = 'Cannot be empty'
-    }
-
-    this.setState({ errors: errors })
-    return formIsValid
-  }
-
-  contactSubmit (e) {
-    e.preventDefault()
-
-    if (this.handleValidation()) {
-      alert('Form submitted')
-    } else {
-      alert('Form has errors.')
-    }
-  }
-
-  handleChange (field, e) {
-    const fields = this.state.fields
-    fields[field] = e.target.value
-    this.setState({ fields })
-  }
-
   sendMessage = () => {
     window.open(`https://web.whatsapp.com/send?phone=&text=${this.state.url}`)
   };
@@ -113,6 +82,7 @@ export default class SponsorDashboard extends Component {
   }
 
   generateTestLink = () => {
+    e.preventDefault()
     const accessToken = localStorage.getItem('Token')
     axios.post(`${config.url}/api/v1/sponsor/tests/generate-link`,
       {
@@ -374,10 +344,11 @@ export default class SponsorDashboard extends Component {
                       <span className="responsive">View All</span>
                     </Button>
                   </CardHeader>
+                   <form>
                   <CardBody>
                     <Row>
                       <Col xl={9} xs={12} pb={3}>
-                        <div className="form-group" onSubmit= {this.contactSubmit.bind(this)} >
+                        <div className="form-group" onSubmit= {this.generateTestLink} >
                           <label className="pl-0">Campaign Name:</label>
                           <input className="form-control" placeholder="E.g. Referral by John Doe, Webinar on xxxxxx (date)" maxlength="30" value={this.state.fields["campaign"]} name="Campaign" onChange={(e) => this.setState({ campaign: e.target.value })} />
                         </div>
@@ -400,13 +371,14 @@ export default class SponsorDashboard extends Component {
                         </Form.Control>
                       </Col>
                       <Col md='auto' xs={12}>
-                        <Button className="mt-2" size="md" color="primary" onClick={this.generateTestLink}>
+                        <Button type="submit" className="mt-2" size="md" color="primary">
                           <span className="responsive">Generate</span>
                         </Button>
                       </Col>
                     </Row>
                     <TestURL />
                   </CardBody>
+                  </form>
                 </Card>
               </Col>
             </Row>
