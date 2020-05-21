@@ -34,7 +34,7 @@ const Reports = function(){
   };
 
   const handleSubmit = (id) => {
-    window.location.replace(`${config.url}/api/v1/report/${id}/`);
+    window.open(`${config.url}/api/v1/report/${id}/`, "_blank") || window.location.replace(`${config.url}/api/v1/report/${id}/`);
   };
 
 const Tests = () => {
