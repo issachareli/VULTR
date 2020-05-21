@@ -46,7 +46,7 @@ const Tests = () => {
       <tr>
         <td>{item.user.name}</td>
         <td>{item.user.email}</td>
-        <td>{record.campaign}</td>
+        <td>{item.campaign}</td>
         {hideColumn ? '' : <td>{item.user.age}</td>}
         {hideColumn ? '' : <td>{item.user.income}</td>}
         <td>{item.type}</td>
