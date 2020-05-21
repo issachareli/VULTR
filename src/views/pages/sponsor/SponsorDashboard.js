@@ -57,9 +57,9 @@ export default class SponsorDashboard extends Component {
     let formIsValid = true
 
     // Name
-    if (!fields.name) {
+    if (!fields.campaign) {
       formIsValid = false
-      errors.name = 'Cannot be empty'
+      errors.campaign = 'Cannot be empty'
     }
 
     this.setState({ errors: errors })
@@ -379,7 +379,7 @@ export default class SponsorDashboard extends Component {
                       <Col xl={9} xs={12} pb={3}>
                         <div className="form-group" onSubmit= {this.contactSubmit.bind(this)} >
                           <label className="pl-0">Campaign Name:</label>
-                          <input className="form-control" placeholder="E.g. Referral by John Doe, Webinar on xxxxxx (date)" maxlength="30" value={this.state.campaign} name="Campaign" onChange={(e) => this.setState({ campaign: e.target.value })} />
+                          <input className="form-control" placeholder="E.g. Referral by John Doe, Webinar on xxxxxx (date)" maxlength="30" value={this.state.fields["campaign"]} name="Campaign" onChange={(e) => this.setState({ campaign: e.target.value })} />
                         </div>
 
                       </Col>
