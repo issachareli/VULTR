@@ -344,11 +344,11 @@ export default class SponsorDashboard extends Component {
                       <span className="responsive">View All</span>
                     </Button>
                   </CardHeader>
-                   <form>
+                   <form onSubmit= {this.generateTestLink} >
                   <CardBody>
                     <Row>
                       <Col xl={9} xs={12} pb={3}>
-                        <div className="form-group" onSubmit= {this.generateTestLink} >
+                        <div className="form-group">
                           <label className="pl-0">Campaign Name:</label>
                           <input className="form-control" placeholder="E.g. Referral by John Doe, Webinar on xxxxxx (date)" maxlength="30" value={this.state.fields["campaign"]} name="Campaign" onChange={(e) => this.setState({ campaign: e.target.value })} />
                         </div>
