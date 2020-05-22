@@ -283,6 +283,29 @@ class GeneratedTest extends Component {
               </Button>
             </Modal.Footer>
           </Modal>
+    
+ <Modal show={this.state.minusModalIsOpen} onHide={this.closeMinusModal}>
+            <Modal.Header closeButton>
+              <Modal.Title>Minus Credits</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <div>Current Credits: {this.state.selectedCredits}</div>
+              <Input
+                type="number"
+                value={this.state.credits}
+                onChange={e => this.setState({ credits: parseInt(e.target.value) })}
+                placeholder="Number of Credits"
+                style={{ marginBottom: '5px' }}
+              />
+            </Modal.Body>
+            <Modal.Footer>
+              <Button color="primary" onClick={this.minusCreditRequest} disabled={isNaN(this.state.credits)}>
+                Add Credits
+              </Button>
+            </Modal.Footer>
+          </Modal>
+
+
           <Modal show={this.state.deleteModalIsOpen} onHide={this.closeDeleteModal}>
             <Modal.Header closeButton>
               <Modal.Title>Delete Link</Modal.Title>
