@@ -51,7 +51,7 @@ class GeneratedTest extends Component {
   }
 
   openMinusModal () {
-    this.setState({ minusModalIsOpen: true, minusModalIsOpen: false })
+    this.setState({ minusModalIsOpen: true, deleteModalIsOpen: false })
   }
 
   openDeleteModal () {
