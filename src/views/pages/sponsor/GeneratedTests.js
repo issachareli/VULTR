@@ -20,6 +20,7 @@ class GeneratedTest extends Component {
     this.state = {
       generatedTests: [], 
       addModalIsOpen:false,
+      minusModalIsOpen:false,
       deleteModalIsOpen:false,
       qrCodeModalIsOpen: false,
       selectedLink:null,
@@ -32,10 +33,12 @@ class GeneratedTest extends Component {
     this.qrCodeRef = React.createRef();
 
     this.openAddModal = this.openAddModal.bind(this);
+    this.openMinusModal = this.openMinusModal.bind(this);
     this.openDeleteModal = this.openDeleteModal.bind(this);
     this.openQRCodeModal = this.openQRCodeModal.bind(this);
     this.closeQRCodeModal = this.closeQRCodeModal.bind(this);
     this.closeAddModal = this.closeAddModal.bind(this);
+    this.closeMinusModal = this.closeMinusModal.bind(this);
     this.addCreditRequest = this.addCreditRequest.bind(this);
     this.deleteLinkRequest = this.deleteLinkRequest.bind(this);
     this.closeDeleteModal = this.closeDeleteModal.bind(this);
@@ -43,6 +46,9 @@ class GeneratedTest extends Component {
   }
   openAddModal() {
     this.setState({addModalIsOpen: true,deleteModalIsOpen:false});
+  }
+  openMinusModal() {
+    this.setState({minusModalIsOpen: true,minusModalIsOpen:false});
   }
   openDeleteModal() {
     this.setState({deleteModalIsOpen: true,addModalIsOpen:false});
@@ -59,6 +65,11 @@ class GeneratedTest extends Component {
   closeAddModal() {
     this.setState({credit:null});
     this.setState({addModalIsOpen: false});
+    this.componentDidMount();
+  }
+   closeMinusModal() {
+    this.setState({credit:null});
+    this.setState({minusModalIsOpen: false});
     this.componentDidMount();
   }
   closeDeleteModal(){
@@ -114,6 +125,17 @@ class GeneratedTest extends Component {
       this.closeAddModal()
     });
 
+      MinusCreditRequest(){
+    const token = localStorage.getItem('Token');
+    axios.post(`${config.url}/api/v1/sponsor/links/minus-credit`,{link_uuid:this.state.selectedLink,credits:this.state.credits}, { headers: { Authorization: `Bearer ${token}` } })
+      .then(res => {
+        this.setState({credits:null,selectedLink:null,selectedCredits:null});
+        this.closeAddModal();
+      }).catch(err => {
+      console.log(err);
+      this.closeAddModal()
+    });
+    
   }
 
   deleteLinkRequest(){
@@ -126,6 +148,10 @@ class GeneratedTest extends Component {
       console.log(err);
       this.closeDeleteModal()
     });
+  }
+  handleMinusClick(record){
+    this.setState({selectedLink:record.uuid,selectedCredits:record.credits});
+    this.openMinusModal();
   }
   handlePlusClick(record){
     this.setState({selectedLink:record.uuid,selectedCredits:record.credits});
@@ -173,7 +199,8 @@ class GeneratedTest extends Component {
               <td style={{width:'10%'}}>{langaugeMap[record.language]}</td>
               <td style={{ width: '15%' }}><span className={'responsive mr-3'}>{record.credits}</span>
                 <span><i style={{fontSize:'1.5em',verticalAlign:'bottom'}} className="fa mx-3 float-right fa-trash" onClick={this.handleDeleteClick.bind(this,record)}/>
-                <i onClick={this.handlePlusClick.bind(this,record)} style={{fontSize:'1.5em',verticalAlign:'bottom'}} className="fa ml-3 float-right fa-plus-circle"/></span>
+                <i onClick={this.handlePlusClick.bind(this,record)} style={{fontSize:'1.5em',verticalAlign:'bottom'}} className="fa ml-3 float-right fa-plus-circle"/>
+          <i onClick={this.handleMinusClick.bind(this,record)} style={{fontSize:'1.5em',verticalAlign:'bottom'}} className="fa ml-3 float-right fa-minus-circle"/></span>
               </td>
               <td style={{ width: '25%' }}>
                 <CopyToClipboard text={`${config.url}/credit/${record.uuid}/test`}>
