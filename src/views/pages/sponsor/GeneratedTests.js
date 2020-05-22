@@ -40,6 +40,7 @@ class GeneratedTest extends Component {
     this.closeAddModal = this.closeAddModal.bind(this)
     this.closeMinusModal = this.closeMinusModal.bind(this)
     this.addCreditRequest = this.addCreditRequest.bind(this)
+    this.minusCreditRequest = this.minusCreditRequest.bind(this)
     this.deleteLinkRequest = this.deleteLinkRequest.bind(this)
     this.closeDeleteModal = this.closeDeleteModal.bind(this)
     this.generateQRCode = this.generateQRCode.bind(this)
