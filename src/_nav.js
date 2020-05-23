@@ -10,7 +10,7 @@ export default {sponsor:{
       name: 'Reports',
       url: '/sponsor/reports',
       icon: 'Folder',
-      allowed:['SYSTEM', 'MANAGEMENT', 'ADMINISTRATIVE','NORMAL', 'DEMO']
+      allowed:['SYSTEM', 'MANAGEMENT', 'ADMINISTRATIVE', 'DEMO']
     },
     {
       name: 'Generated Tests',
@@ -36,7 +36,7 @@ export default {sponsor:{
       name: 'Video Resources',
       url: '/sponsor/video-resources',
       icon: 'Youtube',
-      allowed:['SYSTEM', 'MANAGEMENT', 'ADMINISTRATIVE','NORMAL', 'DEMO']
+      allowed:['SYSTEM', 'MANAGEMENT', 'ADMINISTRATIVE', 'DEMO']
     },
     {
       name: 'Create Sponsor',
