@@ -286,7 +286,7 @@ class GeneratedTest extends Component {
     
  <Modal show={this.state.minusModalIsOpen} onHide={this.closeMinusModal}>
             <Modal.Header closeButton>
-              <Modal.Title>Minus Credits</Modal.Title>
+              <Modal.Title>Remove Credits</Modal.Title>
             </Modal.Header>
             <Modal.Body>
               <div>Current Credits: {this.state.selectedCredits}</div>
@@ -300,7 +300,7 @@ class GeneratedTest extends Component {
             </Modal.Body>
             <Modal.Footer>
               <Button color="primary" onClick={this.minusCreditRequest} disabled={isNaN(this.state.credits)}>
-                Add Credits
+                Remove Credits
               </Button>
             </Modal.Footer>
           </Modal>
