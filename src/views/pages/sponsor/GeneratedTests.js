@@ -208,9 +208,9 @@ class GeneratedTest extends Component {
               </td>
               <td style={{ width: '10%' }}>{langaugeMap[record.language]}</td>
               <td style={{ width: '15%' }}><span className={'responsive mr-3'}>{record.credits}</span>
-                <span><i style={{ fontSize: '1.5em', verticalAlign: 'bottom' }} className="fa mx-3 float-right fa-trash" onClick={this.handleDeleteClick.bind(this, record)}/>
-                  <i onClick={this.handlePlusClick.bind(this, record)} style={{ fontSize: '1.5em', verticalAlign: 'bottom' }} className="fa ml-3 float-right fa-plus-circle"/>
-                  <i onClick={this.handleMinusClick.bind(this, record)} style={{ fontSize: '1.5em', verticalAlign: 'bottom' }} className="fa ml-3 float-right fa-minus-circle"/></span>
+                <span><i onClick={this.handleMinusClick.bind(this, record)} style={{ fontSize: '1.5em', verticalAlign: 'bottom' }} className="fa mx-1 float-right fa-minus-circle"/> <i style={{ fontSize: '1.5em', verticalAlign: 'bottom' }} className="fa mx-1 float-right fa-trash" onClick={this.handleDeleteClick.bind(this, record)}/>
+                  <i onClick={this.handlePlusClick.bind(this, record)} style={{ fontSize: '1.5em', verticalAlign: 'bottom' }} className="fa mx-1 float-right fa-plus-circle"/>
+                  </span>
               </td>
               <td style={{ width: '25%' }}>
                 <CopyToClipboard text={`${config.url}/credit/${record.uuid}/test`}>
